@@ -1,9 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPollyEssential", "DotNetPollyEssential\DotNetPollyEssential.csproj", "{8E80B92E-D908-4F59-A326-5D49FB237A4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnStableService", "UnStableService\UnStableService.csproj", "{E7D97BC0-9FBB-45E2-BE22-F4FDB0784F9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8E80B92E-D908-4F59-A326-5D49FB237A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E80B92E-D908-4F59-A326-5D49FB237A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E80B92E-D908-4F59-A326-5D49FB237A4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7D97BC0-9FBB-45E2-BE22-F4FDB0784F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D97BC0-9FBB-45E2-BE22-F4FDB0784F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D97BC0-9FBB-45E2-BE22-F4FDB0784F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D97BC0-9FBB-45E2-BE22-F4FDB0784F9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
