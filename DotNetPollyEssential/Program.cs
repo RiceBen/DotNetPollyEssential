@@ -13,20 +13,21 @@ namespace DotNetPollyEssential
             var unstableService = new MrUnstable();
 
             ISyncPolicy redo1 = Policy.Handle<ApplicationException>()
-                                      .WaitAndRetry(2, retryDurationProvider =>
-                                      
-                                          TimeSpan.FromSeconds(Math.Pow(2, retryDurationProvider))
-                                      );
+                                      .Retry(1, 
+                                      (exception, count) =>
+                                      {
+                                          Console.WriteLine($"ApplicationException, exception:{exception.Message}, count:{count}");
+                                      });
                                       
             ISyncPolicy redo2 = Policy.Handle<NullReferenceException>()
-                                      .Retry(2,
+                                      .Retry(1,
                                       (exception, count) =>
                                       {
                                           Console.WriteLine($"NullReferenceException, exception:{exception.Message}, count:{count}");
                                       });
 
             ISyncPolicy redo3 = Policy.Handle<InvalidOperationException>()
-                                      .Retry(2,
+                                      .Retry(1,
                                       (exception, count) =>
                                       {
                                           Console.WriteLine($"InvalidOperationException, exception:{exception.Message}, count:{count}");
