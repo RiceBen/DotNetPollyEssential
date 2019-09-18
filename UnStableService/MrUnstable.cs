@@ -11,7 +11,7 @@ namespace UnStableService
         /// Raise random exception
         /// </summary>
         /// <returns></returns>
-        public bool RandomException()
+        public void RandomException()
         {
             Random random = new Random(DateTime.UtcNow.Second);
 
