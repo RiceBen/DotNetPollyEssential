@@ -9,6 +9,8 @@ namespace PollyWithIoC
 {
     public interface IBenPolicy
     {
+        void ExecuteWithPolicy(Action action, IDictionary<string, object> customContext);
+
         ISyncPolicy GetPolicy();
     }
 }

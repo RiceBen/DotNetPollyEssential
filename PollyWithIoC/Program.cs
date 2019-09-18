@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using Autofac;
+using Polly;
 using UnStableService;
 
 namespace PollyWithIoC
@@ -20,7 +22,16 @@ namespace PollyWithIoC
 
                 try
                 {
-                    policy.GetPolicy().Execute(() => unstableService.RandomException());
+                    var context = new Dictionary<string, object>()
+                    {
+                        { "Name", "benjamin fan" },
+                        { "Age", 30 }
+                    };
+
+                    policy.ExecuteWithPolicy(() =>
+                    {
+                        unstableService.RandomException();
+                    }, context);
                 }
                 catch (Exception)
                 {
