@@ -28,15 +28,21 @@ Install necessary packages first with the latest version.
 
 ## How to run
 
-> how to run, set default project.
+> if you are using VS:
+> >Switch StartUp project and run debug (F5)
+> 
+> if you are using VS Code or other IDE:
+> >make sure you have msbuild and add msbuild to your system environment path
+> execute command: `msbuild DotNetPollyEssential.sln`
+> double click {project folder}/bin/Debug/{project name}.exe
 
 ## DotNetPollyEssential
 
 This project show the easiest way to use Polly. Only use Retry policy and Wrap to build custom policy.
 
-## PollyCircuitBreaker
+## Polly CircuitBreaker
 
-
+This project show how to use Circuit-Breaker the easiest way.
 
 ## PollyWithIoC
 

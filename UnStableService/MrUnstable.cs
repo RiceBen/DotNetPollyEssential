@@ -33,5 +33,11 @@ namespace UnStableService
                 throw new InvalidOperationException("random invalid operation exception");
             }
         }
+
+        public void SpecificException(Exception ex)
+        {
+            Console.WriteLine($"Execution SpecificException, {ex.GetType().Name}");
+            throw ex;
+        }
     }
 }

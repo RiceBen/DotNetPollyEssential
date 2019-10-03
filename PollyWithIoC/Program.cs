@@ -1,14 +1,13 @@
+using Autofac;
 using System;
 using System.Collections.Generic;
-using Autofac;
-using Polly;
 using UnStableService;
 
 namespace PollyWithIoC
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
             builder.RegisterModule<PolicyModule>();
