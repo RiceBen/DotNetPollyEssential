@@ -30,6 +30,14 @@ namespace DotNetPollyEssential
                                       {
                                           Console.WriteLine($"InvalidOperationException, exception:{exception.Message}, count:{count}");
                                       });
+            ISyncPolicy redo4 = Policy.Handle<InvalidOperationException>()
+                                      .WaitAndRetry(12,
+                                      (exception, count) =>
+                                      {
+                                          //Console.WriteLine($"InvalidOperationException, exception:{exception.Message}, count:{count}");
+                                          return TimeSpan.FromHours(1);
+                                      });
+
 
             ISyncPolicy myPolicyWrap =
             Policy.Wrap(redo1,

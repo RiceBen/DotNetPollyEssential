@@ -13,7 +13,7 @@ namespace UnStableService
         /// <returns></returns>
         public void RandomException()
         {
-            Random random = new Random(DateTime.UtcNow.Second);
+            Random random = new Random(DateTime.UtcNow.Millisecond);
 
             var randomNumber = random.Next(0, 10);
 
