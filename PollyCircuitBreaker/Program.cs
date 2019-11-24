@@ -14,16 +14,8 @@ namespace PollyCircuitBreaker
             ISyncPolicy redo1 = Policy.Handle<ApplicationException>()
                                       .CircuitBreaker(
                 exceptionsAllowedBeforeBreaking: 2,
-                durationOfBreak: TimeSpan.FromSeconds(3),
-                onBreak: (exception, timespan) =>
-                {
-                    Console.WriteLine("ApplicationException call onBreak Action delegate");
-                },
-                onReset: () =>
-                {
-                    Console.WriteLine("ApplicationException call onReset Action delegate");
-                });
-
+                durationOfBreak: TimeSpan.FromSeconds(3));
+            
             ISyncPolicy redo2 = Policy.Handle<NullReferenceException>()
                                       .CircuitBreaker(
                 exceptionsAllowedBeforeBreaking: 2,
@@ -65,15 +57,15 @@ namespace PollyCircuitBreaker
             Policy.Wrap(redo1,
                         redo2,
                         redo3);
-
-            for (var index = 0; index < 100; index++)
+            
+            for (var index = 0; index < 10; index++)
             {
                 try
                 {
                     SpinWait.SpinUntil(() => false, 1000);
                     myPolicyWrap.Execute(
                         () =>
-                        unstableService.SpecificException(new NullReferenceException()));
+                        unstableService.SpecificException(new InvalidOperationException()));
                 }
                 catch (Exception)
                 {
