@@ -8,7 +8,7 @@ This repo is a safe place to play with .net Foundation awesome package - Polly.
 
 Install Polly directly, this solution will cause a lot of system relative packages installed.
 
-> Install-Package Polly -Version 7.1.1
+> Install-Package Polly -Version 7.2.1
 
 ### Solution 2
 
@@ -16,7 +16,7 @@ Install necessary packages first with the latest version.
 
 1. Install Microsoft.NETCore.Platforms latest version
 
->ex. Install-Package Microsoft.NETCore.Platforms -Version 3.0.0
+>ex. Install-Package Microsoft.NETCore.Platforms -Version 3.1.1
 
 2. Install NETStandard.Library latest version
 
@@ -24,27 +24,33 @@ Install necessary packages first with the latest version.
 
 3. Install Polly latest version
 
->ex. Install-Package Polly -Version 7.1.1
+>ex. Install-Package Polly -Version 7.2.1
 
 ## How to run
 
-> if you are using VS:
-> >Switch StartUp project and run debug (F5)
-> 
-> if you are using VS Code or other IDE:
-> >make sure you have msbuild and add msbuild to your system environment path
-> execute command: `msbuild DotNetPollyEssential.sln`
-> double click {project folder}/bin/Debug/{project name}.exe
+#### if you are using VS:
+
+> Switch StartUp project and run debug (F5)
+
+#### if you are using VS Code or other IDE:
+ 
+> make sure you have msbuild and add msbuild to your system environment path
+  execute command: `msbuild DotNetPollyEssential.sln`
+  double click {project folder}/bin/Debug/{project name}.exe
 
 ## DotNetPollyEssential
 
-This project show the easiest way to use Polly. Only use Retry policy and Wrap to build custom policy.
+This project shows the easiest way to use Polly. Only use Retry policy and Wrap to build custom policy.
 
 ## Polly CircuitBreaker
 
-This project show how to use Circuit-Breaker the easiest way.
+This project shows how to use Circuit-Breaker the easiest way.
 
 ## PollyWithIoC
 
-This project show you how to integrate with IoC container (Autofac as example), that real worl will happen.
+This project shows you how to integrate with IoC container (Autofac as example), that real worl will happen.
 Also shows how to let caller no need to reference to Polly. 
+
+## PollyFallback
+
+This project shows how to use Fallback policy in the easiest way.

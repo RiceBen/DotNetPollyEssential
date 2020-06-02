@@ -1,5 +1,5 @@
-﻿using Polly;
-using System;
+﻿using System;
+using Polly;
 using UnStableService;
 
 namespace DotNetPollyEssential
@@ -25,19 +25,12 @@ namespace DotNetPollyEssential
                                       });
 
             ISyncPolicy redo3 = Policy.Handle<InvalidOperationException>()
-                                      .Retry(1,
-                                      (exception, count) =>
+                                      .WaitAndRetry(2,
+                                      (retryCounter, context) =>
                                       {
-                                          Console.WriteLine($"InvalidOperationException, exception:{exception.Message}, count:{count}");
+                                          Console.WriteLine($"InvalidOperationException, retryCounter:{retryCounter}, Context:{context}");
+                                          return TimeSpan.FromSeconds(Math.Pow(2, retryCounter));
                                       });
-            ISyncPolicy redo4 = Policy.Handle<InvalidOperationException>()
-                                      .WaitAndRetry(12,
-                                      (exception, count) =>
-                                      {
-                                          //Console.WriteLine($"InvalidOperationException, exception:{exception.Message}, count:{count}");
-                                          return TimeSpan.FromHours(1);
-                                      });
-
 
             ISyncPolicy myPolicyWrap =
             Policy.Wrap(redo1,
@@ -45,10 +38,11 @@ namespace DotNetPollyEssential
                         redo3);
             try
             {
-                myPolicyWrap.Execute(() => unstableService.RandomException());
+                myPolicyWrap.Execute(() => unstableService.SpecificException(new InvalidOperationException()));
             }
             catch (Exception)
             {
+                Console.WriteLine("DotNetPollyEssential outsight try catch!");
             }
             finally
             {
