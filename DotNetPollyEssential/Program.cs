@@ -9,7 +9,7 @@ namespace DotNetPollyEssential
         private static void Main(string[] args)
         {
             var unstableService = new MrUnstable();
-
+            
             ISyncPolicy redo1 = Policy.Handle<ApplicationException>()
                                       .Retry(1,
                                       (exception, count) =>

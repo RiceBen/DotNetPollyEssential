@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPollyEssential", "DotNetPollyEssential\DotNetPollyEssential.csproj", "{8E80B92E-D908-4F59-A326-5D49FB237A4B}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PollyCircuitBreaker", "PollyCircuitBreaker\PollyCircuitBreaker.csproj", "{BE287E8F-45B7-403E-85BF-A4B55B876CEA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PollyFallback", "PollyFallback\PollyFallback.csproj", "{D92A4A61-E937-4577-8790-4CC8241F80E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomPolicyBuilder", "CustomPolicyBuilder\CustomPolicyBuilder.csproj", "{A0CDB24E-CCBD-4BEC-9AC0-AE8DC411317B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D92A4A61-E937-4577-8790-4CC8241F80E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D92A4A61-E937-4577-8790-4CC8241F80E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D92A4A61-E937-4577-8790-4CC8241F80E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0CDB24E-CCBD-4BEC-9AC0-AE8DC411317B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0CDB24E-CCBD-4BEC-9AC0-AE8DC411317B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0CDB24E-CCBD-4BEC-9AC0-AE8DC411317B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0CDB24E-CCBD-4BEC-9AC0-AE8DC411317B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
